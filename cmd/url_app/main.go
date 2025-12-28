@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"REK/internal/config"
+	"fmt"
+)
+
+const (
+	envLocal = "local"
+	envDev   = "dev"
+	envProd  = "prod"
+)
 
 func main() {
-	fmt.Println("hello world,s")
+	cfg := config.MustLoad()
+	fmt.Println(cfg)
 }
